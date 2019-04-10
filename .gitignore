@@ -104,4 +104,6 @@ venv.bak/
 .mypy_cache/
 
 #Sensitive information
-keys.json
+Producers/keys.json
+Consumers/btctweets
+Consumers/ethtweets
