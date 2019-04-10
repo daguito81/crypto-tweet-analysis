@@ -72,3 +72,5 @@ Then hit CTRL+A CTRL+D to detach and repeat the process for the other 2 servers.
 With this we have our 3 kafka brokers running and ready to create topics, producers and consumers.
 
 #TODO continue
+
+Note: check offsets.topic.replication.factor=1
