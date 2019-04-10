@@ -70,7 +70,51 @@ bin/kafka-server-start.sh config/server1.properties
 Then hit CTRL+A CTRL+D to detach and repeat the process for the other 2 servers.
 
 With this we have our 3 kafka brokers running and ready to create topics, producers and consumers.
+***
+## Creating and testing our Topics
+So we already have our brokers running, having 3 brokers will allow us to replicate our data for fault-tolerance. Normally these brokers would be hosted in 3 different servers.
 
+Kafka works by having producers send data into a topic and then consumers taking that data from the same topic.
+By using partitions and different producers / consumers, we can design how our data will flow through our architecture.  
+
+#TODO Add a diagram here
+
+In this case we will have 2 topics and 2 producers, 1 for Ethereum tweets and 1 for Bitcoin tweets.
+
+The first step is to create the topics and configure them. We already know we set the global message retention to 24 hours, so data in a topic will be deleted after 24 hours.  
+
+We can create topics with:
+```
+cd /opt/kafka/
+bin/kafka-topics.sh --create --replication-factor 3 --partitions 3 --bootstrap-server localhost:9092 --topic ethereum
+bin/kafka-topics.sh --create --replication-factor 3 --partitions 3 --bootstrap-server localhost:9092 --topic bitcoin
+```
+### Testing the topic
+
+To test that our server is working right, we can make a test topic and use a console producer and consumer to test it out. 
+
+```
+cd /opt/kafka
+bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic my-test-topic
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic my-test-topic
+```
+Then on another terminal window do:
+```
+cd /opt/kafka
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic my-test-topic
+```
+Now everything you write on the first terminal will appear on the second terminal. 
+
+For ease of use we have provided some shell scripts that will run these servers and create both topics needed automatically in the Producer folder.
+***
+
+## Consumers and Producers
+
+### Creating and Running the Consumers.
+
+### Creating and Running Producers
+
+### Testing that we are generating data
 #TODO continue
 
 Note: check offsets.topic.replication.factor=1
