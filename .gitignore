@@ -107,3 +107,6 @@ venv.bak/
 Producers/keys.json
 Consumers/btctweets
 Consumers/ethtweets
+
+#vscode
+#.vscode/*
