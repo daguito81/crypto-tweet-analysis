@@ -52,7 +52,8 @@ listeners=PLAINTEXT://localhost:9092
 advertised.listeners=PLAINTEXT://localhost:9092  
 log.dirs=/tmp/kafka-logs-1  
 log.retention.hours=24  
-offsets.topic.replication.factor=3
+offsets.topic.replication.factor=3  
+transaction.state.log.replication=3
 
 And repeat the process for the other 2 brokers changing the broker.id, the port number and the log dir so that there are no conflicts  
 
