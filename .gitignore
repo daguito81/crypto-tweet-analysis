@@ -105,8 +105,12 @@ venv.bak/
 
 #Sensitive information
 Producers/keys.json
+
+#useless
 Consumers/btctweets
 Consumers/ethtweets
+zookeeper.out
 
 #vscode
 #.vscode/*
+
