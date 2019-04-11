@@ -1,0 +1,3 @@
+Command to run with the right package
+
+pyspark --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.0
