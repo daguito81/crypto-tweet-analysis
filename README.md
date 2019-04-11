@@ -52,6 +52,7 @@ listeners=PLAINTEXT://localhost:9092
 advertised.listeners=PLAINTEXT://localhost:9092  
 log.dirs=/tmp/kafka-logs-1  
 log.retention.hours=24  
+offsets.topic.replication.factor=3
 
 And repeat the process for the other 2 brokers changing the broker.id, the port number and the log dir so that there are no conflicts  
 
@@ -115,6 +116,4 @@ For ease of use we have provided some shell scripts that will run these servers 
 ### Creating and Running Producers
 
 ### Testing that we are generating data
-#TODO continue
 
-Note: check offsets.topic.replication.factor=1
