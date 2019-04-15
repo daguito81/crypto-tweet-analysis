@@ -4,8 +4,7 @@ from tweepy import Stream
 from kafka import SimpleProducer, KafkaClient
 import json
 
-with open("keys.json") as f:
-    keys = json.loads(f.read())
+keys = json.loads(open("keys.json").read())
 
 access_token = keys['access_token']
 access_token_secret = keys['access_token_secret']
@@ -30,5 +29,5 @@ listener = StdOutListener()
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 stream = Stream(auth, listener)
-stream.filter(track=["ETH", "eth", "ethereum", "Ethereum", "$ETH"],
+stream.filter(track=["ETH", "eth", "Ethereum", "ethereum", "$ETH"],
               is_async=True)

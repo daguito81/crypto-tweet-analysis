@@ -113,7 +113,9 @@ zookeeper.out
 
 #vscode
 #.vscode/*
+.vscode/settings.json
 
 #stream checkpoints
-SparkStream-test/pyspark-tests/checkpoints/*.*
-SparkStream-test/pyspark-tests/checkpoints2/*.*
+SparkStream-test/pyspark-tests/checkpoints/
+SparkStream-test/pyspark-tests/checkpoints2/
+
