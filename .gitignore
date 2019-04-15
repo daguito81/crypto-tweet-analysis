@@ -115,5 +115,5 @@ zookeeper.out
 #.vscode/*
 
 #stream checkpoints
-/home/daguito81/Desktop/crypto-tweet-analysis/SparkStream-test/pyspark-tests/checkpoints/*
-/home/daguito81/Desktop/crypto-tweet-analysis/SparkStream-test/pyspark-tests/checkpoints2/*
+SparkStream-test/pyspark-tests/checkpoints/*.*
+SparkStream-test/pyspark-tests/checkpoints2/*.*
