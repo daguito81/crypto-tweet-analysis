@@ -27,8 +27,9 @@ df_stream_eth = spark\
     .format("kafka") \
     .option("kafka.bootstrap.servers", "localhost:9092") \
     .option("topic", "eth-processed") \
-    .option("checkpointLocation", "/home/daguito81/Desktop/crypto-tweet-analysis/SparkStream-test/pyspark-tests/checkpoints") \
+    .option("checkpointLocation", "/home/daguito81/Desktop/checkpoints/eth") \
     .start()
+df_stream_eth.awaitTermination()
 
 df_stream_btc = spark\
     .readStream\
@@ -51,5 +52,6 @@ df_stream_btc = spark\
     .format("kafka") \
     .option("kafka.bootstrap.servers", "localhost:9092") \
     .option("topic", "btc-processed") \
-    .option("checkpointLocation", "/home/daguito81/Desktop/crypto-tweet-analysis/SparkStream-test/pyspark-tests/checkpoints2") \
+    .option("checkpointLocation", "/home/daguito81/Desktop/checkpoints/btc") \
     .start()
+df_stream_btc.awaitTermination()
