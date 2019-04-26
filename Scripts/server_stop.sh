@@ -2,9 +2,10 @@
 
 sudo /opt/kafka/bin/kafka-server-stop.sh
 
-echo Killed Kafka brokers...
+echo Killing Kafka brokers...
+echo Waiting 30 seconds
 
-sleep 10s
+sleep 30s
 
 sudo /opt/zookeeper/bin/zkServer.sh stop /opt/zookeeper/conf/zookeeper.properties
 
