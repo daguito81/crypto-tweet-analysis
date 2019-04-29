@@ -1,5 +1,5 @@
 # crypto-tweet-analysis  
-Project to injest crypto price and tweet data and analyze it.  
+Project to ingest crypto price and tweet data and analyze it.  
 The purpose of this project (and looooong README.md) is to educate on how to set up this project and how every piece works, instead of simply providing some code.
 ***
 
