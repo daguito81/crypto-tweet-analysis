@@ -30,3 +30,4 @@ df_stream_btc = spark\
     .option("checkpointLocation", "/home/daguito81/Desktop/checkpoints/checkpoints-btc") \
     .start()
 df_stream_btc.awaitTermination()
+

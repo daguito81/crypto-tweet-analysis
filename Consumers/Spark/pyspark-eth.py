@@ -30,3 +30,4 @@ df_stream_eth = spark\
     .option("checkpointLocation", "/home/daguito81/Desktop/checkpoints/checkpoints-eth") \
     .start()
 df_stream_eth.awaitTermination()
+
