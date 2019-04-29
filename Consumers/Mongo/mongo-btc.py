@@ -18,3 +18,4 @@ consumer_btc = KafkaConsumer(
 for message in consumer_btc:
     message = message.value
     bitcoin.insert_one(message)
+

@@ -17,3 +17,4 @@ consumer_eth = KafkaConsumer(
 for message in consumer_eth:
     message = message.value
     ethereum.insert_one(message)
+
