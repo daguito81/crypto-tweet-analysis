@@ -4,12 +4,12 @@ The purpose of this project (and looooong README.md) is to educate on how to set
 ***
 
 ## The Plan
-The original plan is to have python scripts get the data and publish them to a kafka topic, then load this data into pyspark and then do the required transformations and then load them into durable storage. 
+The original plan is to have python scripts get the data and publish them to a kafka topic, then load this data into pyspark and then do the required transformations and then load them into durable storage.
 
 **Notes:**  
 1) We will set up Zookeeper and 3 Kafka brokers locally for prototyping
 2) We will set Kafka topics to retain logs for 24 hours
-3) we will try doing hourly aggregates before dumping on durable media (to keep it simmple)
+3) we will try doing hourly aggregates before dumping on durable media (to keep it simple)
 4) We will run this on a Ubuntu 16:04 machine (Ubuntu needs some love as well)
 ***
 ## Setting Up
@@ -39,7 +39,7 @@ tar -xvf kafka_2.11-2.2.0.tgz -C /opt/
 ln -s /opt/kafka_2.11-2.2.0 /opt/kafka
 cd /opt/kafka
 ```
-This next part depends on how many brokers do you want ot run. In the case of this example, we will run 3 brokers on the same machine. In a real example, each broker can be run on it's own instance. This we need to set up on the config files for kafka. As we are running the 3 locally, we need to change the broker ID number which needs to be unique, but also the port as they are all localhost. 
+This next part depends on how many brokers do you want to run. In the case of this example, we will run 3 brokers on the same machine. In a real example, each broker can be run on it's own instance. This we need to set up on the config files for kafka. As we are running the 3 locally, we need to change the broker ID number which needs to be unique, but also the port as they are all localhost.
 
 ```
 cd /opt/kafka/config
@@ -94,7 +94,7 @@ bin/kafka-topics.sh --create --replication-factor 3 --partitions 3 --bootstrap-s
 ```
 ### Testing the topic
 
-To test that our server is working right, we can make a test topic and use a console producer and consumer to test it out. 
+To test that our server is working right, we can make a test topic and use a console producer and consumer to test it out.
 
 ```
 cd /opt/kafka
@@ -106,7 +106,7 @@ Then on another terminal window do:
 cd /opt/kafka
 bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic my-test-topic
 ```
-Now everything you write on the first terminal will appear on the second terminal. 
+Now everything you write on the first terminal will appear on the second terminal.
 
 For ease of use we have provided some shell scripts that will run these servers and create both topics needed automatically in the Producer folder.
 ***
